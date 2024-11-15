@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epika</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: start; /* Üstten hizalama */
+            background-color: #f0f0f0;
+        }
+
+        /* Varsayılan olarak web için görsel */
+        .page-image {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Web sürümü için medya sorgusu */
+        @media screen and (min-width: 768px) {
+            .mobile-image {
+                display: none; /* Mobil görseli gizle */
+            }
+            .web-image {
+                display: block; /* Web görselini göster */
+            }
+        }
+
+        /* Mobil sürümü için medya sorgusu */
+        @media screen and (max-width: 767px) {
+            .web-image {
+                display: none; /* Web görselini gizle */
+            }
+            .mobile-image {
+                display: block; /* Mobil görselini göster */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Web Görseli -->
+    <img src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
+
+    <!-- Mobil Görseli -->
+    <img src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
+</body>
+</html>
