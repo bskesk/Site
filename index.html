@@ -85,8 +85,8 @@
             height: 100%;
         }
 
-        /* Web versiyonunda sabit konum */
-        @media screen and (min-width: 768px) {
+        /* Masaüstü görünümü */
+        @media screen and (min-width: 1024px) {
             .mobile-image {
                 display: none;
             }
@@ -95,13 +95,13 @@
             }
         }
 
-        /* Mobil için özelleştirilmiş konumlandırma */
-        @media screen and (max-width: 767px) {
+        /* Mobil görünümü - hem yatay hem dikey */
+        @media screen and (max-width: 1023px) {
             .web-image {
-                display: none;
+                display: none !important;
             }
             .mobile-image {
-                display: block;
+                display: block !important;
             }
 
             .social-buttons {
@@ -111,7 +111,6 @@
                 display: flex;
                 flex-direction: row;
                 gap: 3px;
-                z-index: 1000;
             }
 
             .social-button {
@@ -125,6 +124,16 @@
 
             .social-button.instagram {
                 margin-top: 0;
+            }
+        }
+
+        /* Özellikle mobil yatay mod için ek kontrol */
+        @media screen and (max-width: 1023px) and (orientation: landscape) {
+            .web-image {
+                display: none !important;
+            }
+            .mobile-image {
+                display: block !important;
             }
         }
     </style>
