@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epika</title>
+    <meta name="description" content="Epika - %100 Doğal Yağlar ve Organik Kozmetik Ürünleri. Cildiniz için en saf ve doğal içerikli kozmetik ürünleri, argan yağı, hindistan cevizi yağı ve daha fazlası.">
+    <meta name="keywords" content="doğal yağlar, organik kozmetik, argan yağı, hindistan cevizi yağı, cilt bakımı, saç bakımı, doğal bakım ürünleri, organik cilt bakımı, yüz bakımı, vücut bakımı, epika kozmetik">
+    <meta name="author" content="Epika">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Sosyal Medya -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Epika - Doğal Yağlar ve Organik Kozmetik">
+    <meta property="og:description" content="Cildiniz için en saf ve doğal içerikli kozmetik ürünleri. %100 doğal yağlar, organik cilt bakım ürünleri ve daha fazlası Epika'da!">
+    <meta property="og:image" content="web-page.jpg">
+    <meta property="og:url" content="https://epika.co">
+    <meta property="og:site_name" content="Epika Doğal Kozmetik">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@epikatr">
+    <meta name="twitter:title" content="Epika - Doğal Yağlar ve Organik Kozmetik">
+    <meta name="twitter:description" content="Cildiniz için en saf ve doğal içerikli kozmetik ürünleri. %100 doğal yağlar ve organik cilt bakım ürünleri.">
+    
+    <!-- Ek SEO Etiketleri -->
+    <link rel="canonical" href="https://epika.co">
+    <meta name="geo.region" content="TR">
+    <meta name="geo.placename" content="Türkiye">
+    
+    <title>Epika - Doğal Yağlar ve Organik Kozmetik Ürünleri</title>
 
-    <!-- Faviconlar (SVG olarak güncellendi) -->
+    <!-- Faviconlar -->
     <link rel="icon" href="favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
     <link rel="icon" href="favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
     <link rel="icon" href="favicon-48x48.svg" sizes="48x48" type="image/svg+xml">
@@ -35,12 +59,13 @@
             right: 20px;
             display: flex;
             gap: 10px;
+            z-index: 1000;
         }
 
         .social-button {
             display: inline-block;
-            width: 48px;  /* İkon boyutunu küçültüyoruz */
-            height: 48px; /* İkon boyutunu küçültüyoruz */
+            width: 48px;
+            height: 48px;
             background-color: transparent;
             border-radius: 0;
             display: flex;
@@ -48,6 +73,11 @@
             align-items: center;
             text-decoration: none;
             box-shadow: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
         }
 
         .social-button img {
@@ -74,20 +104,19 @@
                 display: block;
             }
 
-            /* Mobilde sabit konum ve sol üstte yerleşim */
             .social-buttons {
-                position: fixed; /* Sabit konum */
-                top: 10px; /* Butonları daha yukarı yerleştiriyoruz */
-                left: 20px; /* Sol üst köşe */
+                position: fixed;
+                top: 10px;
+                left: 20px;
                 display: flex;
-                flex-direction: row; /* Butonları yan yana yapıyoruz */
-                gap: 3px; /* İkonlar arasındaki mesafeyi kısaltıyoruz */
-                z-index: 1000; /* Butonların üstte görünmesi için */
+                flex-direction: row;
+                gap: 3px;
+                z-index: 1000;
             }
 
             .social-button {
-                width: 35px;  /* İkon boyutunu küçültüyoruz */
-                height: 35px; /* İkon boyutunu küçültüyoruz */
+                width: 35px;
+                height: 35px;
             }
 
             .social-button.twitter {
@@ -102,15 +131,15 @@
 </head>
 <body>
     <div class="social-buttons">
-        <a href="https://twitter.com/epikatr" class="social-button twitter" target="_blank">
-            <img src="twitter-icon.svg" alt="Twitter">
+        <a href="https://twitter.com/epikatr" class="social-button twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter'da Bizi Takip Edin">
+            <img src="twitter-icon.svg" alt="Epika Twitter" loading="lazy">
         </a>
-        <a href="https://instagram.com/epika.co" class="social-button instagram" target="_blank">
-            <img src="instagram-icon.svg" alt="Instagram">
+        <a href="https://instagram.com/epika.co" class="social-button instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram'da Bizi Takip Edin">
+            <img src="instagram-icon.svg" alt="Epika Instagram" loading="lazy">
         </a>
     </div>
 
-    <img src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
-    <img src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
+    <img src="web-page.jpg" alt="Epika Doğal Yağlar ve Organik Kozmetik - Web Görünümü" class="page-image web-image" />
+    <img src="mobil-page.jpg" alt="Epika Doğal Yağlar ve Organik Kozmetik - Mobil Görünümü" class="page-image mobile-image" loading="lazy" />
 </body>
 </html>
