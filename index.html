@@ -74,13 +74,13 @@
                 display: block;
             }
 
-            /* Mobilde sabit konum yerine absolute konum kullanılıyor */
+            /* Mobilde sabit konum ve sol üstte yerleşim */
             .social-buttons {
-                position: fixed; /* Sabit konum yerine absolute kullanıyoruz */
-                top: 10px; /* Butonları yukarıda tutuyoruz */
-                left: 20px; /* Sol üst köşeye yerleştiriyoruz */
+                position: fixed; /* Sabit konum */
+                top: 10px; /* Butonları daha yukarı yerleştiriyoruz */
+                left: 20px; /* Sol üst köşe */
                 display: flex;
-                flex-direction: row; /* İkonları yan yana yapıyoruz */
+                flex-direction: row; /* Butonları yan yana yapıyoruz */
                 gap: 3px; /* İkonlar arasındaki mesafeyi kısaltıyoruz */
                 z-index: 1000; /* Butonların üstte görünmesi için */
             }
@@ -90,7 +90,10 @@
                 height: 35px; /* İkon boyutunu küçültüyoruz */
             }
 
-            .social-button.twitter,
+            .social-button.twitter {
+                margin-top: 0;
+            }
+
             .social-button.instagram {
                 margin-top: 0;
             }
