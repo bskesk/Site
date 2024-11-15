@@ -39,8 +39,8 @@
 
         .social-button {
             display: inline-block;
-            width: 48px;
-            height: 48px;
+            width: 48px;  /* İkon boyutunu küçültüyoruz */
+            height: 48px; /* İkon boyutunu küçültüyoruz */
             background-color: transparent;
             border-radius: 0;
             display: flex;
@@ -65,7 +65,7 @@
             }
         }
 
-        /* Mobil için özelleştirilmiş konumlandırma (Dikey ve Yatay Mod için) */
+        /* Mobil için özelleştirilmiş konumlandırma */
         @media screen and (max-width: 767px) {
             .web-image {
                 display: none;
@@ -74,29 +74,28 @@
                 display: block;
             }
 
+            /* Mobilde sabit konum ve sol üstte yerleşim */
             .social-buttons {
-                position: fixed;
-                top: 10px;
-                left: 20px;
+                position: fixed; /* Sabit konum */
+                top: 10px; /* Butonları daha yukarı yerleştiriyoruz */
+                left: 20px; /* Sol üst köşe */
                 display: flex;
-                flex-direction: row;
-                gap: 3px;
-                z-index: 1000;
+                flex-direction: row; /* Butonları yan yana yapıyoruz */
+                gap: 3px; /* İkonlar arasındaki mesafeyi kısaltıyoruz */
+                z-index: 1000; /* Butonların üstte görünmesi için */
             }
 
             .social-button {
-                width: 35px;
-                height: 35px;
+                width: 35px;  /* İkon boyutunu küçültüyoruz */
+                height: 35px; /* İkon boyutunu küçültüyoruz */
             }
-        }
 
-        /* Mobilde Yatay Mod İçin Özelleştirilmiş */
-        @media screen and (max-width: 767px) and (orientation: landscape) {
-            .web-image {
-                display: none;
+            .social-button.twitter {
+                margin-top: 0;
             }
-            .mobile-image {
-                display: block;
+
+            .social-button.instagram {
+                margin-top: 0;
             }
         }
     </style>
@@ -111,36 +110,7 @@
         </a>
     </div>
 
-    <img id="responsiveImage" src="web-page.jpg" alt="Web ve Mobil Görsel" class="page-image" />
-
-    <script>
-        function updateImageBasedOnOrientation() {
-            const imgElement = document.getElementById("responsiveImage");
-
-            // Function to check if the device is mobile
-            function isMobileDevice() {
-                return /Mobi|Android|iPhone/i.test(navigator.userAgent);
-            }
-
-            // Update image source based on orientation
-            if (window.innerWidth > window.innerHeight) {
-                // Landscape mode
-                if (isMobileDevice()) {
-                    imgElement.src = "media-page.jpeg"; // Mobile image for landscape
-                } else {
-                    imgElement.src = "web-page.jpg"; // Desktop image
-                }
-            } else {
-                // Portrait mode
-                imgElement.src = "media-page.jpeg"; // Default mobile image
-            }
-        }
-
-        // Run on load
-        window.addEventListener("load", updateImageBasedOnOrientation);
-        // Run on resize
-        window.addEventListener("resize", updateImageBasedOnOrientation);
-    </script>
-
+    <img src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
+    <img src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
 </body>
 </html>
