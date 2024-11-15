@@ -110,7 +110,22 @@
         </a>
     </div>
 
-    <img src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
-    <img src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
+    <!-- Görsellere id ataması ekledik -->
+    <img id="web-image" src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
+    <img id="mobile-image" src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
+
+    <script>
+        // Tarayıcıyı tespit et
+        if (window.innerWidth <= 767) {
+            // Mobil cihazda isek, mobil görseli göster
+            document.getElementById("mobile-image").style.display = "block";
+            document.getElementById("web-image").style.display = "none";
+        } else {
+            // Web cihazında isek, web görselini göster
+            document.getElementById("mobile-image").style.display = "none";
+            document.getElementById("web-image").style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
