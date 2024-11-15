@@ -39,8 +39,8 @@
 
         .social-button {
             display: inline-block;
-            width: 48px;
-            height: 48px;
+            width: 48px;  /* İkon boyutunu küçültüyoruz */
+            height: 48px; /* İkon boyutunu küçültüyoruz */
             background-color: transparent;
             border-radius: 0;
             display: flex;
@@ -55,16 +55,49 @@
             height: 100%;
         }
 
-        /* Mobilde görünür yapmak için default olarak gizleme */
-        #mobile-image {
-            display: none;
+        /* Web versiyonunda sabit konum */
+        @media screen and (min-width: 768px) {
+            .mobile-image {
+                display: none;
+            }
+            .web-image {
+                display: block;
+            }
         }
 
-        /* Webde görünür yapmak için default olarak gizleme */
-        #web-image {
-            display: none;
-        }
+        /* Mobil için özelleştirilmiş konumlandırma */
+        @media screen and (max-width: 767px) {
+            .web-image {
+                display: none;
+            }
+            .mobile-image {
+                display: block;
+            }
 
+            /* Mobilde sabit konum ve sol üstte yerleşim */
+            .social-buttons {
+                position: fixed; /* Sabit konum */
+                top: 10px; /* Butonları daha yukarı yerleştiriyoruz */
+                left: 20px; /* Sol üst köşe */
+                display: flex;
+                flex-direction: row; /* Butonları yan yana yapıyoruz */
+                gap: 3px; /* İkonlar arasındaki mesafeyi kısaltıyoruz */
+                z-index: 1000; /* Butonların üstte görünmesi için */
+            }
+
+            .social-button {
+                width: 35px;  /* İkon boyutunu küçültüyoruz */
+                height: 35px; /* İkon boyutunu küçültüyoruz */
+            }
+
+            .social-button.twitter {
+                margin-top: 0;
+            }
+
+            .social-button.instagram {
+                margin-top: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,20 +110,7 @@
         </a>
     </div>
 
-    <!-- Web ve Mobil Görselleri -->
-    <img id="web-image" class="page-image" src="web-page.jpg" alt="Web Görseli" />
-    <img id="mobile-image" class="page-image" src="mobil-page.jpg" alt="Mobil Görseli" />
-
-    <script>
-        // Tarayıcıyı tespit et
-        if (window.innerWidth <= 767) {
-            // Mobil cihazda isek, mobil görseli göster
-            document.getElementById("mobile-image").style.display = "block";
-        } else {
-            // Web cihazında isek, web görselini göster
-            document.getElementById("web-image").style.display = "block";
-        }
-    </script>
-
+    <img src="web-page.jpg" alt="Web Görseli" class="page-image web-image" />
+    <img src="mobil-page.jpg" alt="Mobil Görseli" class="page-image mobile-image" />
 </body>
 </html>
